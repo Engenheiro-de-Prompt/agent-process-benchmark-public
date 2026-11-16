@@ -1,0 +1,38 @@
+{
+  "template_version": "1",
+  "process_name": "PREENCHER",
+  "business_owner": "PAPEL_SEM_DADO_PESSOAL",
+  "decision_supported": "Qual decisão depende da entrega?",
+  "permitted_inputs": ["Fontes autorizadas, unidades, datas e versões"],
+  "deliverable": "Artefato que será entregue e utilizado",
+  "ideal_definition": "Referência independente acordada antes de executar",
+  "mandatory_acceptance_rules": [
+    {
+      "id": "C1",
+      "description": "Regra observável de negócio",
+      "evidence_required": "Como comprovar esta regra sem autodeclaração do agente",
+      "automated_checker": null,
+      "authorized_human_acceptance_required": true
+    }
+  ],
+  "missing_information_policy": "Não inventar; bloquear ou marcar ausência conforme contrato",
+  "controls": {
+    "valid_examples_required": true,
+    "known_invalid_examples_required": true,
+    "reference_independent_of_agent_output": true
+  },
+  "comparison": {
+    "same_inputs_and_tools": true,
+    "one_change_at_a_time": true,
+    "preserve_first_delivery": true,
+    "gain_threshold_to_define_before_runs": null,
+    "unacceptable_regression_to_define_before_runs": null,
+    "budget_to_define_before_runs": null
+  },
+  "privacy": {
+    "synthetic_by_default": true,
+    "raw_customer_data_export_allowed": false,
+    "customer_authorization_required_for_real_pilot": true
+  },
+  "ready_to_run": false
+}

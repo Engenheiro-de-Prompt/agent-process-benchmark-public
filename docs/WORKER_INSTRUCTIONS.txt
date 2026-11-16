@@ -1,0 +1,12 @@
+Execute a tarefa no diretório WORKSPACE fornecido. Leia apenas WORKSPACE/task.json.
+Produza WORKSPACE/deliveries.json com os quatro objetos de entrega pedidos, sem
+avaliar a si próprio. Pode usar read_file, write_file e terminal (incluindo Python
+stdlib para cálculos) somente para os arquivos desse diretório. Não use rede,
+outros modelos, outros agentes, dados reais, diretórios externos, gabaritos,
+código do avaliador ou respostas de outros workers. Habilidades obrigatórias do
+runtime são a única exceção a leituras de contexto; não expandem esse escopo.
+Respeite o contrato e eventual procedimento incluídos em task.json. Não haverá
+feedback do avaliador nem tentativa posterior à entrega final. Você pode revisar
+seu próprio rascunho antes de terminar. Ao terminar retorne apenas o caminho do
+arquivo deliveries.json. Não inclua dados ou instruções pessoais do runtime no
+artefato. Todos os dados fornecidos são sintéticos.

@@ -1,0 +1,184 @@
+{
+  "campaign_id": "campaign-001",
+  "created_at": "2026-11-15T14:34:59.600488+00:00",
+  "case_ids": [
+    "finance-01",
+    "finance-02",
+    "finance-03",
+    "finance-04",
+    "inventory-01",
+    "inventory-02",
+    "inventory-03",
+    "inventory-04",
+    "meeting-01",
+    "meeting-02",
+    "meeting-03",
+    "meeting-04"
+  ],
+  "replicas": 2,
+  "planned_pairs": 24,
+  "worker_plan": [
+    {
+      "arm": "baseline",
+      "domain": "finance",
+      "replica": 1,
+      "case_ids": [
+        "finance-01",
+        "finance-02",
+        "finance-03",
+        "finance-04"
+      ]
+    },
+    {
+      "arm": "sop",
+      "domain": "inventory",
+      "replica": 1,
+      "case_ids": [
+        "inventory-01",
+        "inventory-02",
+        "inventory-03",
+        "inventory-04"
+      ]
+    },
+    {
+      "arm": "baseline",
+      "domain": "meeting",
+      "replica": 1,
+      "case_ids": [
+        "meeting-01",
+        "meeting-02",
+        "meeting-03",
+        "meeting-04"
+      ]
+    },
+    {
+      "arm": "sop",
+      "domain": "finance",
+      "replica": 1,
+      "case_ids": [
+        "finance-01",
+        "finance-02",
+        "finance-03",
+        "finance-04"
+      ]
+    },
+    {
+      "arm": "baseline",
+      "domain": "inventory",
+      "replica": 1,
+      "case_ids": [
+        "inventory-01",
+        "inventory-02",
+        "inventory-03",
+        "inventory-04"
+      ]
+    },
+    {
+      "arm": "sop",
+      "domain": "meeting",
+      "replica": 1,
+      "case_ids": [
+        "meeting-01",
+        "meeting-02",
+        "meeting-03",
+        "meeting-04"
+      ]
+    },
+    {
+      "arm": "sop",
+      "domain": "meeting",
+      "replica": 2,
+      "case_ids": [
+        "meeting-01",
+        "meeting-02",
+        "meeting-03",
+        "meeting-04"
+      ]
+    },
+    {
+      "arm": "baseline",
+      "domain": "inventory",
+      "replica": 2,
+      "case_ids": [
+        "inventory-01",
+        "inventory-02",
+        "inventory-03",
+        "inventory-04"
+      ]
+    },
+    {
+      "arm": "sop",
+      "domain": "finance",
+      "replica": 2,
+      "case_ids": [
+        "finance-01",
+        "finance-02",
+        "finance-03",
+        "finance-04"
+      ]
+    },
+    {
+      "arm": "baseline",
+      "domain": "meeting",
+      "replica": 2,
+      "case_ids": [
+        "meeting-01",
+        "meeting-02",
+        "meeting-03",
+        "meeting-04"
+      ]
+    },
+    {
+      "arm": "sop",
+      "domain": "inventory",
+      "replica": 2,
+      "case_ids": [
+        "inventory-01",
+        "inventory-02",
+        "inventory-03",
+        "inventory-04"
+      ]
+    },
+    {
+      "arm": "baseline",
+      "domain": "finance",
+      "replica": 2,
+      "case_ids": [
+        "finance-01",
+        "finance-02",
+        "finance-03",
+        "finance-04"
+      ]
+    }
+  ],
+  "frozen_files": {
+    "cases/catalog.json": "6d922cadca91831380cc523f10b0ac63b73d1884fc424a33ea8d419da68846b2",
+    "cases/contracts.json": "ce0c1c178a96a2bfdee2276be388199ba1769dea8ef9c136aed7d38180fb36c5",
+    "tests/oracles.json": "ce5ee446c2d5c9da2fa278a9269c542371d24fc2040dbf0ddd6ea5f1170f49ac",
+    "src/processbench/__init__.py": "01dc070444c2dc8468cd7ac68ba64963643edb8c33ddd5588f95f36ebc2177aa",
+    "methods/DELIVERY_SOP.md": "921492d9d3722b51f101d84ccd5d1e918a7ed9639d2f110628e72e51fa2b6d99",
+    "docs/PROTOCOL.md": "eb47b092321f215b53fee7c569e781b164016d8c0e43ee13c0be22540e9014ee",
+    "docs/CAMPAIGN_DESIGN.md": "265ccd88cac5028f151d6ea7ec352945cc1dd51d209128c0f16e00b66862d78b",
+    "docs/WORKER_INSTRUCTIONS.txt": "6b8ada9627d269b0c4d666d0f7fb2ccff05e05b03600b1c6e25fa64641b96ac6",
+    "bench.py": "f720a9c3683400883d5ca19a6d2f30b44b45d4dc65b9a3d25cb212fa9015f7e6",
+    "runs/campaign-001/controls.json": "b44707fd22c8ac622011096143e0db9ddd02bb2575e4d27c29d2f6c2b369c231"
+  },
+  "executor_profile": {
+    "runtime": "Hermes native delegated agents",
+    "model": "gpt-6.1-sol",
+    "provider": "openai-codex",
+    "profile_evidence": "current native subagent session metadata; seeds and parameters not exposed",
+    "tools": "read/write/terminal limited by instruction to worker directory",
+    "scope_budget": "four small public cases per worker; identical arms",
+    "hard_os_sandbox": false,
+    "feedback_from_grader": false,
+    "tokens_and_monetary_cost": "not exposed per run; unavailable"
+  },
+  "success_threshold": {
+    "improved_pairs_min": 1,
+    "regressions_max": 0,
+    "all_planned_pairs_required": true,
+    "control_false_accepts_max": 0,
+    "control_false_rejects_max": 0
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "arm": "baseline",
+  "domain": "meeting",
+  "replica": 1,
+  "imported_at": "2026-11-15T14:39:42.082978+00:00",
+  "response_sha256": "3c31ec3093919c8842b2b67cab3ec42196bcc3964d0977455574d69861605ba8",
+  "envelope_valid": true,
+  "deliveries": {
+    "meeting-01": {
+      "obligations": [
+        {
+          "id": "S1",
+          "action": "Enviar minuta sintética",
+          "owner": "Pessoa-A",
+          "deadline": "2030-04-03",
+          "evidence": [
+            "S1"
+          ]
+        }
+      ]
+    },
+    "meeting-02": {
+      "obligations": [
+        {
+          "id": "S1",
+          "action": "Revisar lote fictício",
+          "owner": "Pessoa-C",
+          "deadline": null,
+          "evidence": [
+            "S1"
+          ]
+        },
+        {
+          "id": "S2",
+          "action": "Conferir anexo fictício",
+          "owner": "Pessoa-A",
+          "deadline": "na próxima terça",
+          "evidence": [
+            "S2"
+          ]
+        }
+      ]
+    },
+    "meeting-03": {
+      "obligations": [
+        {
+          "id": "S3",
+          "action": "Validar tabela sintética",
+          "owner": "Pessoa-B",
+          "deadline": "até o encerramento",
+          "evidence": [
+            "S3"
+          ]
+        }
+      ]
+    },
+    "meeting-04": {
+      "obligations": []
+    }
+  }
+}

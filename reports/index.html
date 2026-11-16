@@ -1,0 +1,1809 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Benchmark de processos</title><style>body{font:16px system-ui;max-width:1100px;margin:32px auto;padding:16px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ccc;padding:8px}pre{white-space:pre-wrap;overflow-wrap:anywhere}.ok{color:#075}.bad{color:#a21}</style><h1>Resultado de negócio: realizado × ideal</h1><p><strong>Não foi demonstrada superioridade do procedimento na geração das entregas.</strong></p><p>Baseline: 24/24. Procedimento: 24/24. Ideal: 24 por braço.</p><p>Gate em controles conhecidos: 109 controles; 0 erros aceitos, 0 válidos recusados. Controles NÃO são execuções reais nem ganhos de cliente.</p><p>Pequena amostra sintética; réplicas reutilizam casos. Não comprova ROI, eficiência, confiabilidade universal ou ganho em produção. Segregação por contexto/instrução; não sandbox OS.</p><table><tr><th>Caso</th><th>Réplica</th><th>Baseline</th><th>Procedimento</th></tr><tr><td>finance-01</td><td>1</td><td>Aceito</td><td>Aceito</td></tr><tr><td>finance-02</td><td>1</td><td>Aceito</td><td>Aceito</td></tr><tr><td>finance-03</td><td>1</td><td>Aceito</td><td>Aceito</td></tr><tr><td>finance-04</td><td>1</td><td>Aceito</td><td>Aceito</td></tr><tr><td>inventory-01</td><td>1</td><td>Aceito</td><td>Aceito</td></tr><tr><td>inventory-02</td><td>1</td><td>Aceito</td><td>Aceito</td></tr><tr><td>inventory-03</td><td>1</td><td>Aceito</td><td>Aceito</td></tr><tr><td>inventory-04</td><td>1</td><td>Aceito</td><td>Aceito</td></tr><tr><td>meeting-01</td><td>1</td><td>Aceito</td><td>Aceito</td></tr><tr><td>meeting-02</td><td>1</td><td>Aceito</td><td>Aceito</td></tr><tr><td>meeting-03</td><td>1</td><td>Aceito</td><td>Aceito</td></tr><tr><td>meeting-04</td><td>1</td><td>Aceito</td><td>Aceito</td></tr><tr><td>finance-01</td><td>2</td><td>Aceito</td><td>Aceito</td></tr><tr><td>finance-02</td><td>2</td><td>Aceito</td><td>Aceito</td></tr><tr><td>finance-03</td><td>2</td><td>Aceito</td><td>Aceito</td></tr><tr><td>finance-04</td><td>2</td><td>Aceito</td><td>Aceito</td></tr><tr><td>inventory-01</td><td>2</td><td>Aceito</td><td>Aceito</td></tr><tr><td>inventory-02</td><td>2</td><td>Aceito</td><td>Aceito</td></tr><tr><td>inventory-03</td><td>2</td><td>Aceito</td><td>Aceito</td></tr><tr><td>inventory-04</td><td>2</td><td>Aceito</td><td>Aceito</td></tr><tr><td>meeting-01</td><td>2</td><td>Aceito</td><td>Aceito</td></tr><tr><td>meeting-02</td><td>2</td><td>Aceito</td><td>Aceito</td></tr><tr><td>meeting-03</td><td>2</td><td>Aceito</td><td>Aceito</td></tr><tr><td>meeting-04</td><td>2</td><td>Aceito</td><td>Aceito</td></tr></table><h2>Entregas e gabaritos</h2><details><summary>finance-01 / baseline / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 1001,
+        &quot;bank_cents&quot;: 1000,
+        &quot;difference_cents&quot;: 1,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;,
+          &quot;L1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T3&quot;,
+        &quot;ledger_cents&quot;: -201,
+        &quot;bank_cents&quot;: -201,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B2&quot;,
+          &quot;L3&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 800,
+      &quot;bank_cents&quot;: 799,
+      &quot;difference_cents&quot;: 1
+    }
+  },
+  &quot;realizado&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 1001,
+        &quot;bank_cents&quot;: 1000,
+        &quot;difference_cents&quot;: 1,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;,
+          &quot;L1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T3&quot;,
+        &quot;ledger_cents&quot;: -201,
+        &quot;bank_cents&quot;: -201,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B2&quot;,
+          &quot;L3&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 800,
+      &quot;bank_cents&quot;: 799,
+      &quot;difference_cents&quot;: 1
+    }
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>finance-02 / baseline / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 150,
+        &quot;bank_cents&quot;: 150,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;,
+          &quot;L2&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 150,
+      &quot;bank_cents&quot;: 150,
+      &quot;difference_cents&quot;: 0
+    }
+  },
+  &quot;realizado&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 150,
+        &quot;bank_cents&quot;: 150,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;,
+          &quot;L2&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 150,
+      &quot;bank_cents&quot;: 150,
+      &quot;difference_cents&quot;: 0
+    }
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>finance-03 / baseline / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 250,
+        &quot;bank_cents&quot;: 0,
+        &quot;difference_cents&quot;: 250,
+        &quot;evidence&quot;: [
+          &quot;L1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T2&quot;,
+        &quot;ledger_cents&quot;: 0,
+        &quot;bank_cents&quot;: -75,
+        &quot;difference_cents&quot;: 75,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T3&quot;,
+        &quot;ledger_cents&quot;: 0,
+        &quot;bank_cents&quot;: 0,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B2&quot;,
+          &quot;L2&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 250,
+      &quot;bank_cents&quot;: -75,
+      &quot;difference_cents&quot;: 325
+    }
+  },
+  &quot;realizado&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 250,
+        &quot;bank_cents&quot;: 0,
+        &quot;difference_cents&quot;: 250,
+        &quot;evidence&quot;: [
+          &quot;L1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T2&quot;,
+        &quot;ledger_cents&quot;: 0,
+        &quot;bank_cents&quot;: -75,
+        &quot;difference_cents&quot;: 75,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T3&quot;,
+        &quot;ledger_cents&quot;: 0,
+        &quot;bank_cents&quot;: 0,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B2&quot;,
+          &quot;L2&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 250,
+      &quot;bank_cents&quot;: -75,
+      &quot;difference_cents&quot;: 325
+    }
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>finance-04 / baseline / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;balances&quot;: [],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 0,
+      &quot;bank_cents&quot;: 0,
+      &quot;difference_cents&quot;: 0
+    }
+  },
+  &quot;realizado&quot;: {
+    &quot;balances&quot;: [],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 0,
+      &quot;bank_cents&quot;: 0,
+      &quot;difference_cents&quot;: 0
+    }
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>inventory-01 / sop / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 10,
+        &quot;net_units&quot;: -1,
+        &quot;closing_units&quot;: 9,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;,
+          &quot;M2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 10,
+        &quot;net_units&quot;: -1,
+        &quot;closing_units&quot;: 9,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;,
+          &quot;M2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>inventory-02 / sop / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 2,
+        &quot;net_units&quot;: -1,
+        &quot;closing_units&quot;: 1,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;
+        ]
+      },
+      {
+        &quot;sku&quot;: &quot;SKU-B&quot;,
+        &quot;opening_units&quot;: 0,
+        &quot;net_units&quot;: 7,
+        &quot;closing_units&quot;: 7,
+        &quot;evidence&quot;: [
+          &quot;M2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 2,
+        &quot;net_units&quot;: -1,
+        &quot;closing_units&quot;: 1,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;
+        ]
+      },
+      {
+        &quot;sku&quot;: &quot;SKU-B&quot;,
+        &quot;opening_units&quot;: 0,
+        &quot;net_units&quot;: 7,
+        &quot;closing_units&quot;: 7,
+        &quot;evidence&quot;: [
+          &quot;M2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>inventory-03 / sop / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 8,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 8,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;,
+          &quot;M2&quot;,
+          &quot;M3&quot;,
+          &quot;M4&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 8,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 8,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;,
+          &quot;M2&quot;,
+          &quot;M3&quot;,
+          &quot;M4&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>inventory-04 / sop / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 0,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 0,
+        &quot;evidence&quot;: []
+      },
+      {
+        &quot;sku&quot;: &quot;SKU-B&quot;,
+        &quot;opening_units&quot;: 5,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 5,
+        &quot;evidence&quot;: []
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 0,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 0,
+        &quot;evidence&quot;: []
+      },
+      {
+        &quot;sku&quot;: &quot;SKU-B&quot;,
+        &quot;opening_units&quot;: 5,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 5,
+        &quot;evidence&quot;: []
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>meeting-01 / baseline / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S1&quot;,
+        &quot;action&quot;: &quot;Enviar minuta sintética&quot;,
+        &quot;owner&quot;: &quot;Pessoa-A&quot;,
+        &quot;deadline&quot;: &quot;2030-04-03&quot;,
+        &quot;evidence&quot;: [
+          &quot;S1&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S1&quot;,
+        &quot;action&quot;: &quot;Enviar minuta sintética&quot;,
+        &quot;owner&quot;: &quot;Pessoa-A&quot;,
+        &quot;deadline&quot;: &quot;2030-04-03&quot;,
+        &quot;evidence&quot;: [
+          &quot;S1&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>meeting-02 / baseline / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S1&quot;,
+        &quot;action&quot;: &quot;Revisar lote fictício&quot;,
+        &quot;owner&quot;: &quot;Pessoa-C&quot;,
+        &quot;deadline&quot;: null,
+        &quot;evidence&quot;: [
+          &quot;S1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;S2&quot;,
+        &quot;action&quot;: &quot;Conferir anexo fictício&quot;,
+        &quot;owner&quot;: &quot;Pessoa-A&quot;,
+        &quot;deadline&quot;: &quot;na próxima terça&quot;,
+        &quot;evidence&quot;: [
+          &quot;S2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S1&quot;,
+        &quot;action&quot;: &quot;Revisar lote fictício&quot;,
+        &quot;owner&quot;: &quot;Pessoa-C&quot;,
+        &quot;deadline&quot;: null,
+        &quot;evidence&quot;: [
+          &quot;S1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;S2&quot;,
+        &quot;action&quot;: &quot;Conferir anexo fictício&quot;,
+        &quot;owner&quot;: &quot;Pessoa-A&quot;,
+        &quot;deadline&quot;: &quot;na próxima terça&quot;,
+        &quot;evidence&quot;: [
+          &quot;S2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>meeting-03 / baseline / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S3&quot;,
+        &quot;action&quot;: &quot;Validar tabela sintética&quot;,
+        &quot;owner&quot;: &quot;Pessoa-B&quot;,
+        &quot;deadline&quot;: &quot;até o encerramento&quot;,
+        &quot;evidence&quot;: [
+          &quot;S3&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S3&quot;,
+        &quot;action&quot;: &quot;Validar tabela sintética&quot;,
+        &quot;owner&quot;: &quot;Pessoa-B&quot;,
+        &quot;deadline&quot;: &quot;até o encerramento&quot;,
+        &quot;evidence&quot;: [
+          &quot;S3&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>meeting-04 / baseline / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;obligations&quot;: []
+  },
+  &quot;realizado&quot;: {
+    &quot;obligations&quot;: []
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>finance-01 / sop / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 1001,
+        &quot;bank_cents&quot;: 1000,
+        &quot;difference_cents&quot;: 1,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;,
+          &quot;L1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T3&quot;,
+        &quot;ledger_cents&quot;: -201,
+        &quot;bank_cents&quot;: -201,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B2&quot;,
+          &quot;L3&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 800,
+      &quot;bank_cents&quot;: 799,
+      &quot;difference_cents&quot;: 1
+    }
+  },
+  &quot;realizado&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 1001,
+        &quot;bank_cents&quot;: 1000,
+        &quot;difference_cents&quot;: 1,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;,
+          &quot;L1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T3&quot;,
+        &quot;ledger_cents&quot;: -201,
+        &quot;bank_cents&quot;: -201,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B2&quot;,
+          &quot;L3&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 800,
+      &quot;bank_cents&quot;: 799,
+      &quot;difference_cents&quot;: 1
+    }
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>finance-02 / sop / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 150,
+        &quot;bank_cents&quot;: 150,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;,
+          &quot;L2&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 150,
+      &quot;bank_cents&quot;: 150,
+      &quot;difference_cents&quot;: 0
+    }
+  },
+  &quot;realizado&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 150,
+        &quot;bank_cents&quot;: 150,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;,
+          &quot;L2&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 150,
+      &quot;bank_cents&quot;: 150,
+      &quot;difference_cents&quot;: 0
+    }
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>finance-03 / sop / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 250,
+        &quot;bank_cents&quot;: 0,
+        &quot;difference_cents&quot;: 250,
+        &quot;evidence&quot;: [
+          &quot;L1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T2&quot;,
+        &quot;ledger_cents&quot;: 0,
+        &quot;bank_cents&quot;: -75,
+        &quot;difference_cents&quot;: 75,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T3&quot;,
+        &quot;ledger_cents&quot;: 0,
+        &quot;bank_cents&quot;: 0,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B2&quot;,
+          &quot;L2&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 250,
+      &quot;bank_cents&quot;: -75,
+      &quot;difference_cents&quot;: 325
+    }
+  },
+  &quot;realizado&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 250,
+        &quot;bank_cents&quot;: 0,
+        &quot;difference_cents&quot;: 250,
+        &quot;evidence&quot;: [
+          &quot;L1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T2&quot;,
+        &quot;ledger_cents&quot;: 0,
+        &quot;bank_cents&quot;: -75,
+        &quot;difference_cents&quot;: 75,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T3&quot;,
+        &quot;ledger_cents&quot;: 0,
+        &quot;bank_cents&quot;: 0,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B2&quot;,
+          &quot;L2&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 250,
+      &quot;bank_cents&quot;: -75,
+      &quot;difference_cents&quot;: 325
+    }
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>finance-04 / sop / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;balances&quot;: [],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 0,
+      &quot;bank_cents&quot;: 0,
+      &quot;difference_cents&quot;: 0
+    }
+  },
+  &quot;realizado&quot;: {
+    &quot;balances&quot;: [],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 0,
+      &quot;bank_cents&quot;: 0,
+      &quot;difference_cents&quot;: 0
+    }
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>inventory-01 / baseline / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 10,
+        &quot;net_units&quot;: -1,
+        &quot;closing_units&quot;: 9,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;,
+          &quot;M2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 10,
+        &quot;net_units&quot;: -1,
+        &quot;closing_units&quot;: 9,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;,
+          &quot;M2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>inventory-02 / baseline / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 2,
+        &quot;net_units&quot;: -1,
+        &quot;closing_units&quot;: 1,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;
+        ]
+      },
+      {
+        &quot;sku&quot;: &quot;SKU-B&quot;,
+        &quot;opening_units&quot;: 0,
+        &quot;net_units&quot;: 7,
+        &quot;closing_units&quot;: 7,
+        &quot;evidence&quot;: [
+          &quot;M2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 2,
+        &quot;net_units&quot;: -1,
+        &quot;closing_units&quot;: 1,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;
+        ]
+      },
+      {
+        &quot;sku&quot;: &quot;SKU-B&quot;,
+        &quot;opening_units&quot;: 0,
+        &quot;net_units&quot;: 7,
+        &quot;closing_units&quot;: 7,
+        &quot;evidence&quot;: [
+          &quot;M2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>inventory-03 / baseline / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 8,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 8,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;,
+          &quot;M2&quot;,
+          &quot;M3&quot;,
+          &quot;M4&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 8,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 8,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;,
+          &quot;M2&quot;,
+          &quot;M3&quot;,
+          &quot;M4&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>inventory-04 / baseline / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 0,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 0,
+        &quot;evidence&quot;: []
+      },
+      {
+        &quot;sku&quot;: &quot;SKU-B&quot;,
+        &quot;opening_units&quot;: 5,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 5,
+        &quot;evidence&quot;: []
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 0,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 0,
+        &quot;evidence&quot;: []
+      },
+      {
+        &quot;sku&quot;: &quot;SKU-B&quot;,
+        &quot;opening_units&quot;: 5,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 5,
+        &quot;evidence&quot;: []
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>meeting-01 / sop / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S1&quot;,
+        &quot;action&quot;: &quot;Enviar minuta sintética&quot;,
+        &quot;owner&quot;: &quot;Pessoa-A&quot;,
+        &quot;deadline&quot;: &quot;2030-04-03&quot;,
+        &quot;evidence&quot;: [
+          &quot;S1&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S1&quot;,
+        &quot;action&quot;: &quot;Enviar minuta sintética&quot;,
+        &quot;owner&quot;: &quot;Pessoa-A&quot;,
+        &quot;deadline&quot;: &quot;2030-04-03&quot;,
+        &quot;evidence&quot;: [
+          &quot;S1&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>meeting-02 / sop / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S1&quot;,
+        &quot;action&quot;: &quot;Revisar lote fictício&quot;,
+        &quot;owner&quot;: &quot;Pessoa-C&quot;,
+        &quot;deadline&quot;: null,
+        &quot;evidence&quot;: [
+          &quot;S1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;S2&quot;,
+        &quot;action&quot;: &quot;Conferir anexo fictício&quot;,
+        &quot;owner&quot;: &quot;Pessoa-A&quot;,
+        &quot;deadline&quot;: &quot;na próxima terça&quot;,
+        &quot;evidence&quot;: [
+          &quot;S2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S1&quot;,
+        &quot;action&quot;: &quot;Revisar lote fictício&quot;,
+        &quot;owner&quot;: &quot;Pessoa-C&quot;,
+        &quot;deadline&quot;: null,
+        &quot;evidence&quot;: [
+          &quot;S1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;S2&quot;,
+        &quot;action&quot;: &quot;Conferir anexo fictício&quot;,
+        &quot;owner&quot;: &quot;Pessoa-A&quot;,
+        &quot;deadline&quot;: &quot;na próxima terça&quot;,
+        &quot;evidence&quot;: [
+          &quot;S2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>meeting-03 / sop / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S3&quot;,
+        &quot;action&quot;: &quot;Validar tabela sintética&quot;,
+        &quot;owner&quot;: &quot;Pessoa-B&quot;,
+        &quot;deadline&quot;: &quot;até o encerramento&quot;,
+        &quot;evidence&quot;: [
+          &quot;S3&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S3&quot;,
+        &quot;action&quot;: &quot;Validar tabela sintética&quot;,
+        &quot;owner&quot;: &quot;Pessoa-B&quot;,
+        &quot;deadline&quot;: &quot;até o encerramento&quot;,
+        &quot;evidence&quot;: [
+          &quot;S3&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>meeting-04 / sop / réplica 1</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;obligations&quot;: []
+  },
+  &quot;realizado&quot;: {
+    &quot;obligations&quot;: []
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>meeting-01 / sop / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S1&quot;,
+        &quot;action&quot;: &quot;Enviar minuta sintética&quot;,
+        &quot;owner&quot;: &quot;Pessoa-A&quot;,
+        &quot;deadline&quot;: &quot;2030-04-03&quot;,
+        &quot;evidence&quot;: [
+          &quot;S1&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S1&quot;,
+        &quot;action&quot;: &quot;Enviar minuta sintética&quot;,
+        &quot;owner&quot;: &quot;Pessoa-A&quot;,
+        &quot;deadline&quot;: &quot;2030-04-03&quot;,
+        &quot;evidence&quot;: [
+          &quot;S1&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>meeting-02 / sop / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S1&quot;,
+        &quot;action&quot;: &quot;Revisar lote fictício&quot;,
+        &quot;owner&quot;: &quot;Pessoa-C&quot;,
+        &quot;deadline&quot;: null,
+        &quot;evidence&quot;: [
+          &quot;S1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;S2&quot;,
+        &quot;action&quot;: &quot;Conferir anexo fictício&quot;,
+        &quot;owner&quot;: &quot;Pessoa-A&quot;,
+        &quot;deadline&quot;: &quot;na próxima terça&quot;,
+        &quot;evidence&quot;: [
+          &quot;S2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S1&quot;,
+        &quot;action&quot;: &quot;Revisar lote fictício&quot;,
+        &quot;owner&quot;: &quot;Pessoa-C&quot;,
+        &quot;deadline&quot;: null,
+        &quot;evidence&quot;: [
+          &quot;S1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;S2&quot;,
+        &quot;action&quot;: &quot;Conferir anexo fictício&quot;,
+        &quot;owner&quot;: &quot;Pessoa-A&quot;,
+        &quot;deadline&quot;: &quot;na próxima terça&quot;,
+        &quot;evidence&quot;: [
+          &quot;S2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>meeting-03 / sop / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S3&quot;,
+        &quot;action&quot;: &quot;Validar tabela sintética&quot;,
+        &quot;owner&quot;: &quot;Pessoa-B&quot;,
+        &quot;deadline&quot;: &quot;até o encerramento&quot;,
+        &quot;evidence&quot;: [
+          &quot;S3&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S3&quot;,
+        &quot;action&quot;: &quot;Validar tabela sintética&quot;,
+        &quot;owner&quot;: &quot;Pessoa-B&quot;,
+        &quot;deadline&quot;: &quot;até o encerramento&quot;,
+        &quot;evidence&quot;: [
+          &quot;S3&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>meeting-04 / sop / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;obligations&quot;: []
+  },
+  &quot;realizado&quot;: {
+    &quot;obligations&quot;: []
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>inventory-01 / baseline / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 10,
+        &quot;net_units&quot;: -1,
+        &quot;closing_units&quot;: 9,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;,
+          &quot;M2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 10,
+        &quot;net_units&quot;: -1,
+        &quot;closing_units&quot;: 9,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;,
+          &quot;M2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>inventory-02 / baseline / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 2,
+        &quot;net_units&quot;: -1,
+        &quot;closing_units&quot;: 1,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;
+        ]
+      },
+      {
+        &quot;sku&quot;: &quot;SKU-B&quot;,
+        &quot;opening_units&quot;: 0,
+        &quot;net_units&quot;: 7,
+        &quot;closing_units&quot;: 7,
+        &quot;evidence&quot;: [
+          &quot;M2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 2,
+        &quot;net_units&quot;: -1,
+        &quot;closing_units&quot;: 1,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;
+        ]
+      },
+      {
+        &quot;sku&quot;: &quot;SKU-B&quot;,
+        &quot;opening_units&quot;: 0,
+        &quot;net_units&quot;: 7,
+        &quot;closing_units&quot;: 7,
+        &quot;evidence&quot;: [
+          &quot;M2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>inventory-03 / baseline / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 8,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 8,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;,
+          &quot;M2&quot;,
+          &quot;M3&quot;,
+          &quot;M4&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 8,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 8,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;,
+          &quot;M2&quot;,
+          &quot;M3&quot;,
+          &quot;M4&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>inventory-04 / baseline / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 0,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 0,
+        &quot;evidence&quot;: []
+      },
+      {
+        &quot;sku&quot;: &quot;SKU-B&quot;,
+        &quot;opening_units&quot;: 5,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 5,
+        &quot;evidence&quot;: []
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 0,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 0,
+        &quot;evidence&quot;: []
+      },
+      {
+        &quot;sku&quot;: &quot;SKU-B&quot;,
+        &quot;opening_units&quot;: 5,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 5,
+        &quot;evidence&quot;: []
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>finance-01 / sop / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 1001,
+        &quot;bank_cents&quot;: 1000,
+        &quot;difference_cents&quot;: 1,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;,
+          &quot;L1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T3&quot;,
+        &quot;ledger_cents&quot;: -201,
+        &quot;bank_cents&quot;: -201,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B2&quot;,
+          &quot;L3&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 800,
+      &quot;bank_cents&quot;: 799,
+      &quot;difference_cents&quot;: 1
+    }
+  },
+  &quot;realizado&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 1001,
+        &quot;bank_cents&quot;: 1000,
+        &quot;difference_cents&quot;: 1,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;,
+          &quot;L1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T3&quot;,
+        &quot;ledger_cents&quot;: -201,
+        &quot;bank_cents&quot;: -201,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B2&quot;,
+          &quot;L3&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 800,
+      &quot;bank_cents&quot;: 799,
+      &quot;difference_cents&quot;: 1
+    }
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>finance-02 / sop / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 150,
+        &quot;bank_cents&quot;: 150,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;,
+          &quot;L2&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 150,
+      &quot;bank_cents&quot;: 150,
+      &quot;difference_cents&quot;: 0
+    }
+  },
+  &quot;realizado&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 150,
+        &quot;bank_cents&quot;: 150,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;,
+          &quot;L2&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 150,
+      &quot;bank_cents&quot;: 150,
+      &quot;difference_cents&quot;: 0
+    }
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>finance-03 / sop / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 250,
+        &quot;bank_cents&quot;: 0,
+        &quot;difference_cents&quot;: 250,
+        &quot;evidence&quot;: [
+          &quot;L1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T2&quot;,
+        &quot;ledger_cents&quot;: 0,
+        &quot;bank_cents&quot;: -75,
+        &quot;difference_cents&quot;: 75,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T3&quot;,
+        &quot;ledger_cents&quot;: 0,
+        &quot;bank_cents&quot;: 0,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B2&quot;,
+          &quot;L2&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 250,
+      &quot;bank_cents&quot;: -75,
+      &quot;difference_cents&quot;: 325
+    }
+  },
+  &quot;realizado&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 250,
+        &quot;bank_cents&quot;: 0,
+        &quot;difference_cents&quot;: 250,
+        &quot;evidence&quot;: [
+          &quot;L1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T2&quot;,
+        &quot;ledger_cents&quot;: 0,
+        &quot;bank_cents&quot;: -75,
+        &quot;difference_cents&quot;: 75,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T3&quot;,
+        &quot;ledger_cents&quot;: 0,
+        &quot;bank_cents&quot;: 0,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B2&quot;,
+          &quot;L2&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 250,
+      &quot;bank_cents&quot;: -75,
+      &quot;difference_cents&quot;: 325
+    }
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>finance-04 / sop / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;balances&quot;: [],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 0,
+      &quot;bank_cents&quot;: 0,
+      &quot;difference_cents&quot;: 0
+    }
+  },
+  &quot;realizado&quot;: {
+    &quot;balances&quot;: [],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 0,
+      &quot;bank_cents&quot;: 0,
+      &quot;difference_cents&quot;: 0
+    }
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>meeting-01 / baseline / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S1&quot;,
+        &quot;action&quot;: &quot;Enviar minuta sintética&quot;,
+        &quot;owner&quot;: &quot;Pessoa-A&quot;,
+        &quot;deadline&quot;: &quot;2030-04-03&quot;,
+        &quot;evidence&quot;: [
+          &quot;S1&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S1&quot;,
+        &quot;action&quot;: &quot;Enviar minuta sintética&quot;,
+        &quot;owner&quot;: &quot;Pessoa-A&quot;,
+        &quot;deadline&quot;: &quot;2030-04-03&quot;,
+        &quot;evidence&quot;: [
+          &quot;S1&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>meeting-02 / baseline / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S1&quot;,
+        &quot;action&quot;: &quot;Revisar lote fictício&quot;,
+        &quot;owner&quot;: &quot;Pessoa-C&quot;,
+        &quot;deadline&quot;: null,
+        &quot;evidence&quot;: [
+          &quot;S1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;S2&quot;,
+        &quot;action&quot;: &quot;Conferir anexo fictício&quot;,
+        &quot;owner&quot;: &quot;Pessoa-A&quot;,
+        &quot;deadline&quot;: &quot;na próxima terça&quot;,
+        &quot;evidence&quot;: [
+          &quot;S2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S1&quot;,
+        &quot;action&quot;: &quot;Revisar lote fictício&quot;,
+        &quot;owner&quot;: &quot;Pessoa-C&quot;,
+        &quot;deadline&quot;: null,
+        &quot;evidence&quot;: [
+          &quot;S1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;S2&quot;,
+        &quot;action&quot;: &quot;Conferir anexo fictício&quot;,
+        &quot;owner&quot;: &quot;Pessoa-A&quot;,
+        &quot;deadline&quot;: &quot;na próxima terça&quot;,
+        &quot;evidence&quot;: [
+          &quot;S2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>meeting-03 / baseline / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S3&quot;,
+        &quot;action&quot;: &quot;Validar tabela sintética&quot;,
+        &quot;owner&quot;: &quot;Pessoa-B&quot;,
+        &quot;deadline&quot;: &quot;até o encerramento&quot;,
+        &quot;evidence&quot;: [
+          &quot;S3&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;obligations&quot;: [
+      {
+        &quot;id&quot;: &quot;S3&quot;,
+        &quot;action&quot;: &quot;Validar tabela sintética&quot;,
+        &quot;owner&quot;: &quot;Pessoa-B&quot;,
+        &quot;deadline&quot;: &quot;até o encerramento&quot;,
+        &quot;evidence&quot;: [
+          &quot;S3&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>meeting-04 / baseline / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;obligations&quot;: []
+  },
+  &quot;realizado&quot;: {
+    &quot;obligations&quot;: []
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>inventory-01 / sop / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 10,
+        &quot;net_units&quot;: -1,
+        &quot;closing_units&quot;: 9,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;,
+          &quot;M2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 10,
+        &quot;net_units&quot;: -1,
+        &quot;closing_units&quot;: 9,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;,
+          &quot;M2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>inventory-02 / sop / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 2,
+        &quot;net_units&quot;: -1,
+        &quot;closing_units&quot;: 1,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;
+        ]
+      },
+      {
+        &quot;sku&quot;: &quot;SKU-B&quot;,
+        &quot;opening_units&quot;: 0,
+        &quot;net_units&quot;: 7,
+        &quot;closing_units&quot;: 7,
+        &quot;evidence&quot;: [
+          &quot;M2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 2,
+        &quot;net_units&quot;: -1,
+        &quot;closing_units&quot;: 1,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;
+        ]
+      },
+      {
+        &quot;sku&quot;: &quot;SKU-B&quot;,
+        &quot;opening_units&quot;: 0,
+        &quot;net_units&quot;: 7,
+        &quot;closing_units&quot;: 7,
+        &quot;evidence&quot;: [
+          &quot;M2&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>inventory-03 / sop / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 8,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 8,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;,
+          &quot;M2&quot;,
+          &quot;M3&quot;,
+          &quot;M4&quot;
+        ]
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 8,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 8,
+        &quot;evidence&quot;: [
+          &quot;M1&quot;,
+          &quot;M2&quot;,
+          &quot;M3&quot;,
+          &quot;M4&quot;
+        ]
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>inventory-04 / sop / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 0,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 0,
+        &quot;evidence&quot;: []
+      },
+      {
+        &quot;sku&quot;: &quot;SKU-B&quot;,
+        &quot;opening_units&quot;: 5,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 5,
+        &quot;evidence&quot;: []
+      }
+    ]
+  },
+  &quot;realizado&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;sku&quot;: &quot;SKU-A&quot;,
+        &quot;opening_units&quot;: 0,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 0,
+        &quot;evidence&quot;: []
+      },
+      {
+        &quot;sku&quot;: &quot;SKU-B&quot;,
+        &quot;opening_units&quot;: 5,
+        &quot;net_units&quot;: 0,
+        &quot;closing_units&quot;: 5,
+        &quot;evidence&quot;: []
+      }
+    ]
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>finance-01 / baseline / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 1001,
+        &quot;bank_cents&quot;: 1000,
+        &quot;difference_cents&quot;: 1,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;,
+          &quot;L1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T3&quot;,
+        &quot;ledger_cents&quot;: -201,
+        &quot;bank_cents&quot;: -201,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B2&quot;,
+          &quot;L3&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 800,
+      &quot;bank_cents&quot;: 799,
+      &quot;difference_cents&quot;: 1
+    }
+  },
+  &quot;realizado&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 1001,
+        &quot;bank_cents&quot;: 1000,
+        &quot;difference_cents&quot;: 1,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;,
+          &quot;L1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T3&quot;,
+        &quot;ledger_cents&quot;: -201,
+        &quot;bank_cents&quot;: -201,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B2&quot;,
+          &quot;L3&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 800,
+      &quot;bank_cents&quot;: 799,
+      &quot;difference_cents&quot;: 1
+    }
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>finance-02 / baseline / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 150,
+        &quot;bank_cents&quot;: 150,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;,
+          &quot;L2&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 150,
+      &quot;bank_cents&quot;: 150,
+      &quot;difference_cents&quot;: 0
+    }
+  },
+  &quot;realizado&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 150,
+        &quot;bank_cents&quot;: 150,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;,
+          &quot;L2&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 150,
+      &quot;bank_cents&quot;: 150,
+      &quot;difference_cents&quot;: 0
+    }
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>finance-03 / baseline / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 250,
+        &quot;bank_cents&quot;: 0,
+        &quot;difference_cents&quot;: 250,
+        &quot;evidence&quot;: [
+          &quot;L1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T2&quot;,
+        &quot;ledger_cents&quot;: 0,
+        &quot;bank_cents&quot;: -75,
+        &quot;difference_cents&quot;: 75,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T3&quot;,
+        &quot;ledger_cents&quot;: 0,
+        &quot;bank_cents&quot;: 0,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B2&quot;,
+          &quot;L2&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 250,
+      &quot;bank_cents&quot;: -75,
+      &quot;difference_cents&quot;: 325
+    }
+  },
+  &quot;realizado&quot;: {
+    &quot;balances&quot;: [
+      {
+        &quot;id&quot;: &quot;T1&quot;,
+        &quot;ledger_cents&quot;: 250,
+        &quot;bank_cents&quot;: 0,
+        &quot;difference_cents&quot;: 250,
+        &quot;evidence&quot;: [
+          &quot;L1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T2&quot;,
+        &quot;ledger_cents&quot;: 0,
+        &quot;bank_cents&quot;: -75,
+        &quot;difference_cents&quot;: 75,
+        &quot;evidence&quot;: [
+          &quot;B1&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;T3&quot;,
+        &quot;ledger_cents&quot;: 0,
+        &quot;bank_cents&quot;: 0,
+        &quot;difference_cents&quot;: 0,
+        &quot;evidence&quot;: [
+          &quot;B2&quot;,
+          &quot;L2&quot;
+        ]
+      }
+    ],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 250,
+      &quot;bank_cents&quot;: -75,
+      &quot;difference_cents&quot;: 325
+    }
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details><details><summary>finance-04 / baseline / réplica 2</summary><pre>{
+  &quot;ideal&quot;: {
+    &quot;balances&quot;: [],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 0,
+      &quot;bank_cents&quot;: 0,
+      &quot;difference_cents&quot;: 0
+    }
+  },
+  &quot;realizado&quot;: {
+    &quot;balances&quot;: [],
+    &quot;totals&quot;: {
+      &quot;ledger_cents&quot;: 0,
+      &quot;bank_cents&quot;: 0,
+      &quot;difference_cents&quot;: 0
+    }
+  },
+  &quot;diagnostico&quot;: []
+}</pre></details>

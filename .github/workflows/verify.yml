@@ -1,0 +1,20 @@
+name: Verify sanitized benchmark
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONPATH: src
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Unit and contract tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Replay frozen synthetic campaign without models or network
+        run: python3 tools/verify_release.py
+      - name: Scan exact tracked tree
+        run: python3 tools/check_publication.py

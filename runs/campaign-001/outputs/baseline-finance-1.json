@@ -1,0 +1,103 @@
+{
+  "arm": "baseline",
+  "domain": "finance",
+  "replica": 1,
+  "imported_at": "2026-11-15T14:39:42.079667+00:00",
+  "response_sha256": "c9e20ed9fd920a8eb576a5ce9f9bf4af8e32f3fbfab57524a57fdae02a35c502",
+  "envelope_valid": true,
+  "deliveries": {
+    "finance-01": {
+      "balances": [
+        {
+          "id": "T1",
+          "ledger_cents": 1001,
+          "bank_cents": 1000,
+          "difference_cents": 1,
+          "evidence": [
+            "B1",
+            "L1"
+          ]
+        },
+        {
+          "id": "T3",
+          "ledger_cents": -201,
+          "bank_cents": -201,
+          "difference_cents": 0,
+          "evidence": [
+            "B2",
+            "L3"
+          ]
+        }
+      ],
+      "totals": {
+        "ledger_cents": 800,
+        "bank_cents": 799,
+        "difference_cents": 1
+      }
+    },
+    "finance-02": {
+      "balances": [
+        {
+          "id": "T1",
+          "ledger_cents": 150,
+          "bank_cents": 150,
+          "difference_cents": 0,
+          "evidence": [
+            "B1",
+            "L2"
+          ]
+        }
+      ],
+      "totals": {
+        "ledger_cents": 150,
+        "bank_cents": 150,
+        "difference_cents": 0
+      }
+    },
+    "finance-03": {
+      "balances": [
+        {
+          "id": "T1",
+          "ledger_cents": 250,
+          "bank_cents": 0,
+          "difference_cents": 250,
+          "evidence": [
+            "L1"
+          ]
+        },
+        {
+          "id": "T2",
+          "ledger_cents": 0,
+          "bank_cents": -75,
+          "difference_cents": 75,
+          "evidence": [
+            "B1"
+          ]
+        },
+        {
+          "id": "T3",
+          "ledger_cents": 0,
+          "bank_cents": 0,
+          "difference_cents": 0,
+          "evidence": [
+            "B2",
+            "L2"
+          ]
+        }
+      ],
+      "totals": {
+        "ledger_cents": 250,
+        "bank_cents": -75,
+        "difference_cents": 325
+      }
+    },
+    "finance-04": {
+      "balances": [],
+      "totals": {
+        "ledger_cents": 0,
+        "bank_cents": 0,
+        "difference_cents": 0
+      }
+    }
+  }
+}
